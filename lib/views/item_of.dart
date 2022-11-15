@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class ItemsOf{
 
-  Widget itemOfList(HomeViewModel viewModel,int index,BuildContext context){
+  Widget itemOfList(HomeViewModel viewModel,int index,BuildContext context,key){
     return Slidable(
       startActionPane: ActionPane(
         motion: const ScrollMotion(),

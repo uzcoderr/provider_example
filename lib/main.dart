@@ -31,6 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   HomeViewModel viewModel = HomeViewModel();
+  final key = GlobalKey<AnimatedListState>();
 
   @override
   void initState() {
@@ -49,10 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Consumer<HomeViewModel>(
           builder: (context, value, child) => Center(
               child: ListView.builder(
-            itemCount: viewModel.posts.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ItemsOf().itemOfList(viewModel, index, context);
-            },
+                itemCount: viewModel.posts.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ItemsOf().itemOfList(viewModel, index, context,key);
+                },
           )),
         ),
       ),
